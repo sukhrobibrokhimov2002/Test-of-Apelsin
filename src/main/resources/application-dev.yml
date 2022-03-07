@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://backuptest.cj3aivebegss.us-east-1.rds.amazonaws.com:5432/postgres
+    password: postgres
+    username: postgres
+#    hikari:
+#      connection-timeout: 40000
+#      minimum-idle: 5
+#      maximum-pool-size: 50
+#      idle-timeout: 300000
+#      max-lifetime: 1200000
+#      auto-commit: false
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+
+
+server:
+  error:
+    include-binding-errors: always
+    include-message: always
+  port: 8085
+

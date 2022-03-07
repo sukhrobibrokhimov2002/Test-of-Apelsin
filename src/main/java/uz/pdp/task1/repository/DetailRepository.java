@@ -17,4 +17,5 @@ public interface DetailRepository extends JpaRepository<Detail, Long> {
 
     @Query("select SUM(d.amount) from Detail d where d.order.id=?1")
     Double findSumOfAmount(Long order_id);
+
 }

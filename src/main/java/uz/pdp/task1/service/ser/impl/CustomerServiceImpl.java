@@ -38,9 +38,9 @@ public class CustomerServiceImpl extends GenericCrudService
     public ResponseEntity<DataDto<GenericDto>> create(@NotNull CustomerCreateDto dto) {
         String phone = dto.getPhone();
         boolean existsByPhone = customerRepository.existsByPhone(phone);
-        if (existsByPhone){
+        if (existsByPhone)
             return new ResponseEntity<>(new DataDto<>(false),HttpStatus.CONFLICT);
-        }
+
         Customer customer = customerMapper.fromCreateDto(dto);
         Customer save = customerRepository.save(customer);
         return new ResponseEntity<>(new DataDto<>(genericMapper.fromDomain(customer)), HttpStatus.CREATED);
